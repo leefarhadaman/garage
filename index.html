@@ -1004,8 +1004,8 @@
     }
     
     .footer-social img {
-      width: clamp(16px, 3vw, 18px);
-      height: clamp(16px, 3vw, 18px);
+      width: 36px;
+      height: 36px;
       filter: invert(1);
     }
     
@@ -1212,8 +1212,8 @@
       }
       
       .footer-social img {
-        width: clamp(14px, 2.5vw, 16px);
-        height: clamp(14px, 2.5vw, 16px);
+        width: 36px;
+        height: 36px;
       }
       
       .footer-bottom {
@@ -1225,6 +1225,24 @@
         padding: 4rem 1.5rem 1.5rem;
       }
     }
+  </style>
+  <style>
+    @keyframes marqueeBrands {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .brands-marquee::-webkit-scrollbar { display: none; }
+    .brands-marquee { scrollbar-width: none; }
+    .brands-marquee-wrapper { overflow: hidden; }
+  </style>
+  <style>
+    @keyframes marqueeTestimonials {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .testimonials-marquee::-webkit-scrollbar { display: none; }
+    .testimonials-marquee { scrollbar-width: none; }
+    .testimonials-marquee-wrapper { overflow: hidden; }
   </style>
 </head>
 <body>
@@ -1274,6 +1292,166 @@
       </div>
     </div>
   </section>
+  <!-- Achievements Section (enhanced, modern horizontal feature highlight) -->
+  <section class="section achievements-section" id="achievements" style="padding: 0; background: none;">
+    <div class="container achievements-enhanced" style="display: flex; justify-content: center; align-items: flex-end; gap: 3rem; margin-top: -4rem; margin-bottom: 2rem; flex-wrap: wrap; position: relative;">
+      <div class="achievement-feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <div class="feature-value"><span class="count-up" data-target="8">0</span>+</div>
+        <div class="feature-label">Years Experience</div>
+      </div>
+      <div class="achievement-feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+        <div class="feature-value"><span class="count-up" data-target="13">0</span>+</div>
+        <div class="feature-label">Staff Team Size</div>
+      </div>
+      <div class="achievement-feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-face-smile"></i></div>
+        <div class="feature-value"><span class="count-up" data-target="1500">0</span>+</div>
+        <div class="feature-label">Happy Customers</div>
+      </div>
+    </div>
+  </section>
+  <style>
+    .achievements-section {
+      background: none;
+      margin-bottom: 0;
+    }
+    .achievements-enhanced {
+      background: none;
+      margin-top: -4rem;
+      margin-bottom: 2rem;
+      z-index: 2;
+      position: relative;
+      flex-wrap: wrap;
+      gap: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      width: 100%;
+    }
+    .achievement-feature-card {
+      background: #fff;
+      color: #111;
+      border-radius: 2.5rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1.5px 8px rgba(0,0,0,0.04);
+      padding: 2.5rem 2.5rem 2rem 2.5rem;
+      min-width: 220px;
+      min-height: 220px;
+      width: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: visible;
+      transition: box-shadow 0.3s, transform 0.3s;
+      border: 1.5px solid #eee;
+      margin-top: 2.5rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .achievement-feature-card:hover {
+      box-shadow: 0 16px 48px rgba(0,0,0,0.18), 0 2px 12px rgba(0,0,0,0.08);
+      transform: translateY(-10px) scale(1.04);
+      border: 1.5px solid #111;
+    }
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fff 60%, #f3f3f3 100%);
+      border: 2.5px solid #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      color: #111;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      position: absolute;
+      top: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+    .achievement-feature-card:hover .feature-icon {
+      border: 2.5px solid #222;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+    }
+    .feature-value {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #111;
+      margin-top: 2.5rem;
+      margin-bottom: 0.3rem;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .feature-label {
+      font-size: 1.15rem;
+      color: #111;
+      font-weight: 600;
+      opacity: 0.92;
+      text-align: center;
+      margin-top: 0.2rem;
+      letter-spacing: 0.2px;
+    }
+    @media (max-width: 1100px) {
+      .achievements-enhanced {
+        gap: 1.5rem;
+      }
+      .achievement-feature-card {
+        width: 200px;
+        min-width: 140px;
+        min-height: 140px;
+        padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+      }
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+        top: -24px;
+      }
+      .feature-value {
+        font-size: 1.6rem;
+        margin-top: 1.2rem;
+      }
+      .feature-label {
+        font-size: 0.98rem;
+      }
+    }
+    @media (max-width: 700px) {
+      .achievements-enhanced {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        width: 100%;
+      }
+      .achievement-feature-card {
+        width: 100%;
+        max-width: 340px;
+        min-width: 120px;
+        min-height: 120px;
+        margin-top: 2.5rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .feature-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        top: -18px;
+      }
+      .feature-value {
+        font-size: 1.2rem;
+        margin-top: 0.8rem;
+      }
+      .feature-label {
+        font-size: 0.92rem;
+      }
+    }
+  </style>
   <!-- Why Choose Us -->
   <section class="section" id="why">
     <div class="container">
@@ -1308,6 +1486,16 @@
           <img src="https://img.icons8.com/ios/452/price-tag.png" alt="Affordable Pricing">
           <h3>Affordable Pricing</h3>
           <p>Competitive rates with transparent pricing for all our premium services</p>
+        </div>
+        <div class="why-card">
+          <img src="https://img.icons8.com/ios/452/paint-brush.png" alt="Paint Booth">
+          <h3>We Have Paint Booth</h3>
+          <p>State-of-the-art paint booth for flawless, dust-free, and durable paint finishes</p>
+        </div>
+        <div class="why-card">
+          <img src="https://img.icons8.com/ios/452/gift.png" alt="Customer Loyalty Rewards">
+          <h3>Customer Loyalty Rewards</h3>
+          <p>Exclusive benefits and discounts for our repeat and loyal customers</p>
         </div>
       </div>
     </div>
@@ -1387,101 +1575,78 @@
   <section class="section" id="brands">
     <div class="container">
       <h2 class="section-title">Brands We Service</h2>
-      <div class="brands-slider">
-        <div class="brand-card">
-          <img src="https://logowik.com/content/uploads/images/mahindra-suv1293.jpg" alt="Mahindra" loading="lazy">
-        </div>
-        <div class="brand-card">
-          <img src="https://static.vecteezy.com/system/resources/previews/020/975/561/non_2x/tata-logo-tata-icon-transparent-free-png.png" alt="TATA" loading="lazy">
-        </div>
-        <div class="brand-card">
-          <img src="https://i.pinimg.com/736x/7c/e0/5d/7ce05d694d74bd703c657018682cd2e6.jpg" alt="Maruti Suzuki" loading="lazy">
-        </div>
-        <div class="brand-card">
-          <img src="https://logos-world.net/wp-content/uploads/2021/04/Hyundai-Logo.png" alt="Hyundai" loading="lazy">
-        </div>
-        <div class="brand-card">
-          <img src="https://logos-world.net/wp-content/uploads/2021/04/Honda-Logo.png" alt="Honda" loading="lazy">
-        </div>
-        <div class="brand-card">
-          <img src="https://m.media-amazon.com/images/I/71A-5+o5GUL.jpg" alt="Toyota" loading="lazy">
-        </div>
-        <div class="brand-card">
-          <img src="https://brandlogos.net/wp-content/uploads/2021/11/nissan-brandlogo.net_.png" alt="Nissan" loading="lazy">
-        </div>
-        <div class="brand-card">
-          <img src="https://logos-world.net/wp-content/uploads/2021/04/Ford-Logo.png" alt="Ford" loading="lazy">
-        </div>
-        <div class="brand-card">
-          <img src="https://img.icons8.com/ios/452/car.png" alt="All Brands" loading="lazy">
-        </div>
+      <div class="brands-marquee-wrapper" style="overflow: hidden; width: 100%; position: relative;">
+        <div class="brands-marquee" id="brandsMarquee" style="display: flex; align-items: center; gap: clamp(1.5rem, 3vw, 2rem); will-change: transform;"></div>
       </div>
     </div>
   </section>
+  <style>
+    @keyframes marqueeBrands {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .brands-marquee::-webkit-scrollbar { display: none; }
+    .brands-marquee { scrollbar-width: none; }
+    .brands-marquee-wrapper { overflow: hidden; }
+  </style>
   <!-- Testimonials -->
   <section class="section" id="testimonials">
     <div class="container">
       <h2 class="section-title">What Our Customers Say</h2>
-      <div class="testimonials-slider">
-        <div class="testimonial">
-          <p>Outstanding service and attention to detail. My car looks brand new after their expert work!</p>
-          <span>- Priya Sharma</span>
-        </div>
-        <div class="testimonial">
-          <p>Professional team with quick turnaround. Highly recommend for all automotive needs!</p>
-          <span>- Rajiv Kumar</span>
-        </div>
-        <div class="testimonial">
-          <p>Excellent insurance support and quality repairs. Best service center in Rangia!</p>
-          <span>- Anjali Das</span>
-        </div>
-        <div class="testimonial">
-          <p>Fair pricing and honest service. They truly care about customer satisfaction!</p>
-          <span>- Suresh Patel</span>
-        </div>
+      <div class="testimonials-marquee-wrapper" style="overflow: hidden; width: 100%; position: relative;">
+        <div class="testimonials-marquee" id="testimonialsMarquee" style="display: flex; align-items: center; gap: clamp(1.5rem, 3vw, 2rem); will-change: transform;"></div>
       </div>
     </div>
   </section>
+  <style>
+    @keyframes marqueeTestimonials {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .testimonials-marquee::-webkit-scrollbar { display: none; }
+    .testimonials-marquee { scrollbar-width: none; }
+    .testimonials-marquee-wrapper { overflow: hidden; }
+  </style>
   <!-- Gallery -->
   <section class="section" id="gallery">
     <div class="container">
       <h2 class="section-title">Before & After Gallery</h2>
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=600&q=80" alt="Car Repair Before" loading="lazy">
+          <img src="image_1-1.jpg" alt="Car Repair Before" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=600&q=80" alt="Car Repair After" loading="lazy">
+          <img src="image_1-2.jpg" alt="Car Repair After" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Car Washing" loading="lazy">
+          <img src="image_2-1.jpg" alt="Car Repair Before" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=80" alt="Car Polishing" loading="lazy">
+          <img src="image_2-2.jpg" alt="Car Repair After" loading="lazy">
         </div>
         <div class="gallery-item hidden">
-          <img src="https://images.unsplash.com/photo-1517524206122-6112d908b0d0?auto=format&fit=crop&w=600&q=80" alt="Wheel Alignment" loading="lazy">
+          <img src="image_3-1.jpg" alt="Car Repair Before" loading="lazy">
         </div>
         <div class="gallery-item hidden">
-          <img src="https://images.unsplash.com/photo-1516321165247-7b6bced4b31f?auto=format&fit=crop&w=600&q=80" alt="Engine Diagnostics" loading="lazy">
+          <img src="image_3-2.jpg" alt="Car Repair After" loading="lazy">
         </div>
         <div class="gallery-item hidden">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Car Detailing" loading="lazy">
+          <img src="image_4-1.jpg" alt="Car Repair Before" loading="lazy">
         </div>
         <div class="gallery-item hidden">
-          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Car Restoration" loading="lazy">
+          <img src="image_4-2.jpg" alt="Car Repair After" loading="lazy">
         </div>
         <div class="gallery-item hidden">
-          <img src="https://images.unsplash.com/photo-1506521781261-d73483c1f9b2?auto=format&fit=crop&w=600&q=80" alt="Car Painting" loading="lazy">
+          <img src="image_5-1.jpg" alt="Car Repair Before" loading="lazy">
         </div>
         <div class="gallery-item hidden">
-          <img src="https://images.unsplash.com/photo-1511914265836-3d53d709e9ca?auto=format&fit=crop&w=600&q=80" alt="Car Repair Side" loading="lazy">
+          <img src="image_5-2.jpg" alt="Car Repair After" loading="lazy">
         </div>
         <div class="gallery-item hidden">
-          <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=600&q=80" alt="Car Repair Before 2" loading="lazy">
+          <img src="image_6-1.jpg" alt="Car Repair Before" loading="lazy">
         </div>
         <div class="gallery-item hidden">
-          <img src="https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=600&q=80" alt="Car Repair After 2" loading="lazy">
+          <img src="image_6-2.jpg" alt="Car Repair After" loading="lazy">
         </div>
       </div>
       <button class="show-more-btn" id="showMoreBtn">Show More</button>
@@ -1555,12 +1720,6 @@
           <a href="https://www.facebook.com/p/Riya-Motor-Works-100069243975935/" aria-label="Facebook">
             <img src="https://img.icons8.com/ios/452/facebook.png" alt="Facebook" loading="lazy">
           </a>
-          <!-- <a href="#" aria-label="Twitter">
-            <img src="https://img.icons8.com/ios/452/twitter.png" alt="Twitter" loading="lazy">
-          </a>
-          <a href="#" aria-label="Instagram">
-            <img src="https://img.icons8.com/ios/452/instagram-new.png" alt="Instagram" loading="lazy">
-          </a> -->
         </div>
       </div>
       <div class="footer-links">
@@ -1676,7 +1835,7 @@
 
     // Scroll Animations
     const observerOptions = {
-      threshold: 0.2,
+      threshold: 0.01,
       rootMargin: '0px 0px -50px 0px'
     };
     const observer = new IntersectionObserver(function(entries) {
@@ -1684,10 +1843,8 @@
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           const children = entry.target.querySelectorAll('.why-card, .service-card, .brand-card, .testimonial, .gallery-item, .contact-item, .contact-form, .hero-content, .hero-cta-group, .show-more-btn');
-          children.forEach((child, index) => {
-            setTimeout(() => {
-              child.classList.add('visible');
-            }, index * 100);
+          children.forEach((child) => {
+            child.classList.add('visible');
           });
         }
       });
@@ -1811,6 +1968,112 @@
           submitBtn.disabled = false;
         }, 1500);
       });
+    }
+
+    // Animated Counting for Achievements Section
+    function animateCountUp(el, target, duration = 1800) {
+      let start = 0;
+      const increment = target / (duration / 16);
+      function update() {
+        start += increment;
+        if (start < target) {
+          el.textContent = Math.floor(start);
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = target;
+        }
+      }
+      update();
+    }
+
+    function triggerStatsCount() {
+      const statsSection = document.getElementById('achievements');
+      if (!statsSection) return;
+      const statEls = statsSection.querySelectorAll('.count-up');
+      let triggered = false;
+      function onScroll() {
+        const rect = statsSection.getBoundingClientRect();
+        if (!triggered && rect.top < window.innerHeight - 100) {
+          statEls.forEach(el => {
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            animateCountUp(el, target);
+          });
+          triggered = true;
+          window.removeEventListener('scroll', onScroll);
+        }
+      }
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    }
+    triggerStatsCount();
+
+    // Infinite Marquee for Brands
+    const brands = [
+      {src: 'https://logowik.com/content/uploads/images/mahindra-suv1293.jpg', alt: 'Mahindra'},
+      {src: 'https://static.vecteezy.com/system/resources/previews/020/975/561/non_2x/tata-logo-tata-icon-transparent-free-png.png', alt: 'TATA'},
+      {src: 'https://i.pinimg.com/736x/7c/e0/5d/7ce05d694d74bd703c657018682cd2e6.jpg', alt: 'Maruti Suzuki'},
+      {src: 'https://logos-world.net/wp-content/uploads/2021/04/Hyundai-Logo.png', alt: 'Hyundai'},
+      {src: 'https://logos-world.net/wp-content/uploads/2021/04/Honda-Logo.png', alt: 'Honda'},
+      {src: 'https://m.media-amazon.com/images/I/71A-5+o5GUL.jpg', alt: 'Toyota'},
+      {src: 'https://brandlogos.net/wp-content/uploads/2021/11/nissan-brandlogo.net_.png', alt: 'Nissan'},
+      {src: 'https://logos-world.net/wp-content/uploads/2021/04/Ford-Logo.png', alt: 'Ford'},
+      {src: 'https://img.icons8.com/ios/452/car.png', alt: 'All Brands'}
+    ];
+    const brandsMarquee = document.getElementById('brandsMarquee');
+    if (brandsMarquee) {
+      for (let i = 0; i < 3; i++) { // Repeat for seamless loop
+        brands.forEach(brand => {
+          const div = document.createElement('div');
+          div.className = 'brand-card';
+          div.innerHTML = `<img src="${brand.src}" alt="${brand.alt}" loading="lazy">`;
+          brandsMarquee.appendChild(div);
+        });
+      }
+      let scroll = 0;
+      function animateBrandsMarquee() {
+        scroll += 1;
+        if (scroll >= brandsMarquee.scrollWidth / 3) scroll = 0;
+        brandsMarquee.style.transform = `translateX(-${scroll}px)`;
+        requestAnimationFrame(animateBrandsMarquee);
+      }
+      animateBrandsMarquee();
+    }
+    // Infinite Marquee for Testimonials
+    const testimonials = [
+      {author: 'Sanjib Haloi', text: 'Excellent work, highly satisfied with the repair quality.'},
+      {author: 'Anupam Deka', text: 'Very nice service provided, timely and professional.'},
+      {author: 'Suman Dey', text: 'Very good car service, my go-to workshop now!'},
+      {author: 'Kabir', text: 'Awesome service... Claimed insurance for my i20 here, quick and clean job.'},
+      {author: 'Rajeeb Deka', text: 'Very fast service and well-behaved staff!'},
+      {author: 'Ganesh Kalita', text: 'Very good service, they fixed my dent in no time.'},
+      {author: 'Arun Baro', text: 'Very good work and cooperative staff.'},
+      {author: 'Kishor Nath', text: 'Perfect service! My car looks brand new.'},
+      {author: 'Nilkamal Saloi', text: 'Excellent work, highly recommend this workshop.'},
+      {author: 'Sumaya Ahmed', text: 'Nice service and very affordable pricing.'},
+      {author: 'Sahil', text: 'Excellent service... always available when needed.'},
+      {author: 'Suraj Prakash', text: 'Found this place through Google—honest, efficient, and precise work.'},
+      {author: 'MouSumi Priya', text: 'Superb workshop. Workers are very skilled.'},
+      {author: 'Jitu Rahman', text: 'Very good workshop, transparent billing and neat job.'},
+      {author: 'Partha Sarma', text: 'Very good and quality service... my full car was painted and it looks brand new.'}
+    ];
+    const testimonialsMarquee = document.getElementById('testimonialsMarquee');
+    if (testimonialsMarquee) {
+      for (let i = 0; i < 3; i++) { // Repeat for seamless loop
+        testimonials.forEach(t => {
+          const div = document.createElement('div');
+          div.className = 'testimonial';
+          div.innerHTML = `<p>"${t.text}"</p><span>- ${t.author}</span>`;
+          testimonialsMarquee.appendChild(div);
+        });
+      }
+      let scrollT = 0;
+      function animateTestimonialsMarquee() {
+        scrollT += 1;
+        if (scrollT >= testimonialsMarquee.scrollWidth / 3) scrollT = 0;
+        testimonialsMarquee.style.transform = `translateX(-${scrollT}px)`;
+        requestAnimationFrame(animateTestimonialsMarquee);
+      }
+      animateTestimonialsMarquee();
     }
   </script>
 </body>
